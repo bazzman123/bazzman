@@ -74,7 +74,7 @@ function getCARS(link) {
       console.log(carLinks);
       for (let i = 0; i < 3; i++) {
           //console.log(carLinks[i].innerHTML);
-          console.log(carLinks[i].firstElementChild);
+          console.log(carLinks[i].firstElementChild.firstElementChild.href);
       };
   }).catch(err => console.log(err))
 };
