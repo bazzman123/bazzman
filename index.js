@@ -63,5 +63,6 @@ function getAPI(code) {
 
 
 
-getHTML("https://www.merinfo.se/search?who=0702990271");
-console.log(info)
+//getHTML("https://www.merinfo.se/search?who=0702990271");
+getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
+console.log(info);
