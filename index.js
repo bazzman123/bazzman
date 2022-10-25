@@ -70,6 +70,10 @@ function getCARS(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       console.log(doc);
+      let carLinks = doc.getElementsByClassName("clickable-tr");
+      for (let i = 0; i < 3; i++) {
+          console.log(carLinks[i]);
+      };
   }).catch(err => console.log(err))
 };
 
