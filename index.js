@@ -51,18 +51,28 @@ function getAPI(code) {
     let finalLink = "https://www.merinfo.se/api/v1/people/" + code + "/vehicles";
   response = fetch(finalLink, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}}).then(response => response.json()).then((data) => {
       //console.log(JSON.parse(data));
-      console.log(typeof(data));
-      console.log(data);
+      //console.log(typeof(data));
+      console.log("getAPI first data:", data);
       //console.log(data["data"]["url"]);
-      
       info["car count"] = data["data"]["count"];
       info["car link"] = data["data"]["url"];
       console.log(info);
+      if (data["data"]["url"] != "") {
+          getCARS(data["data"]["url"]);
+      };
   }).catch(err => console.log(err))
 };
 
+function getCARS(link) {
+  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  let finalLink = PROXY + link;
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      console.log(doc);
+  }).catch(err => console.log(err))
+};
 
-
-//getHTML("https://www.merinfo.se/search?who=0702990271");
-getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
+getHTML("https://www.merinfo.se/search?who=0702990271");
+//getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
 console.log(info);
