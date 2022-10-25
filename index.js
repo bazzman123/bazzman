@@ -72,7 +72,6 @@ function getCARS(link) {
       console.log(doc);
       let carLinks = doc.getElementsByClassName("clickable-tr").childNodes[0];
       console.log(carLinks);
-      console.log("hhh")
       for (let i = 0; i < 3; i++) {
           console.log(carLinks[i]);
       };
