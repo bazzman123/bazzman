@@ -36,7 +36,7 @@ function getCODE(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
   let finalLink = PROXY + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
-      console.log("HTML:::", html);
+      //console.log("HTML:::", html);
       //ratsit-lonekollen-url
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
@@ -54,7 +54,8 @@ function getCODE(link) {
 function getAPI(code) {
     let finalLink = "https://www.merinfo.se/api/v1/people/" + code + "/vehicles";
   response = fetch(finalLink, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}}).then(response => response.json()).then((data) => {
-      console.log(handleJSON(data));
+      console.log(JSON.parse(data));
+      console.log(typeof(data));
       info.push({
           "h": "a"
       });
