@@ -56,6 +56,7 @@ function getAPI(code) {
   response = fetch(finalLink, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}}).then(response => response.json()).then((data) => {
       //console.log(JSON.parse(data));
       console.log(typeof(data));
+      console.log(data)
       info.push({
           "h": "a"
       });
