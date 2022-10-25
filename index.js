@@ -24,9 +24,9 @@ function getHTML(link) {
       console.log(doc);
       let href = doc.getElementsByClassName("link-primary")[0].href;
       console.log("person href:", href);
-      info.push({
+      info.push(
           "searchedLink": href
-      });
+      );
       console.log("stored:", info);
       getCODE(href)
   }).catch(err => console.log(err))
@@ -59,10 +59,12 @@ function getAPI(code) {
       console.log(data);
       //console.log(data["data"]["url"]);
       
-      info.push({
-          "car count": data["data"]["count"],
+      info.push(
+          "car count": data["data"]["count"]
+      );
+      info.push(
           "car link": data["data"]["url"]
-      });
+      );
       console.log(info);
   }).catch(err => console.log(err))
 };
