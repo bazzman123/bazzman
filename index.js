@@ -57,10 +57,13 @@ function getAPI(code) {
       //console.log(JSON.parse(data));
       console.log(typeof(data));
       console.log(data);
-      console.log(data["data"]["url"]);
+      //console.log(data["data"]["url"]);
+      
       info.push({
-          "h": "a"
+          "car count": data["data"]["count"],
+          "car link": data["data"]["url"]
       });
+      console.log(info);
   }).catch(err => console.log(err))
 };
 
