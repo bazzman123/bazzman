@@ -122,18 +122,25 @@ function getNumber() {
     getHTML(final);
 };
 
+function addElement() {
+  // create a new div element
+  const newDiv = document.createElement("div");
+
+  // and give it some content
+  const newContent = document.createTextNode("Hi there and greetings!");
+
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+}
+
 function displayDetails(info) {
-    console.log(info);
-    var fullDiv = document.createElement('div');
-    fullDiv.className = "flexbox-container-2";
-    fullDiv.id = "FD";
+    console.log(info)
+    document.body.onload = addElement;
     for (let i = 0; i < info["car count"]; i++) {
-        var resultCarsDiv = document.getElementById("resultCars");
-        var p = document.createElement("p");
-        p.innerHTML = info[i];
-        resultCarsDiv[0].append(p);
-        //p.textContent = info[i];
-        //resultCarsDiv.append(p);
     };
 };
 
