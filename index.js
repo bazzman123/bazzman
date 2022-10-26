@@ -106,6 +106,7 @@ function isCREDIT(link) {
           };
       };
       //console.log(info);
+      displayDetails(info)
   }).catch(err => console.log(err))
 };
 
@@ -119,7 +120,22 @@ function getNumber() {
     let part2 = input.replace("https://www.merinfo.se/search?who=", "");
     let final = part1 + part2;
     getHTML(final);
-}
+};
+
+function displayDetails(info) {
+    console.log(info);
+    var fullDiv = document.createElement('div');
+    fullDiv.className = "flexbox-container-2";
+    fullDiv.id = "FD";
+    for (let i = 0; i < info["car count"]; i++) {
+        var myDiv = $("FD");
+        var paragraph = document.createElement("p");
+        paragraph.textContent = info[i];
+        myDiv.append(paragraph);
+    };
+};
+
+
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
 
 
