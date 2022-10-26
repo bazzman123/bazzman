@@ -103,11 +103,13 @@ function isCREDIT(link) {
           if (!(i in info)) {info[i] = cd}
       }
       
-      //console.log(info);
+      console.log(info);
       
   }).catch(err => console.log(err))
 };
 
 getHTML("https://www.merinfo.se/search?who=0702990271");
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
+console.log(info);
+console.log(info);
 console.log(info);
