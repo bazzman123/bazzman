@@ -114,10 +114,14 @@ function getNumber() {
     var input = document.getElementById('inputNumber').value;
     //console.log(input);
     //alert(input);
-    displayDetails(input);
+    //displayDetails(input);
     getHTML(input);
 }
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
+
+
+
+
 
 /*
 
