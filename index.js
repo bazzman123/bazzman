@@ -11,12 +11,7 @@ dict.push({
     value: "the value"
 });
 */
-function getElementByXpath(path) {
-  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-}
-function resolver(prefix){
-   return prefix === "xhtml" ? 'http://www.w3.org/1999/xhtml' : null;
-}
+
 
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
@@ -100,6 +95,9 @@ function isCREDIT(link) {
       let modell = byId.getElementsByClassName("value")[1].textContent;
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
       console.log(creditValue, fabrikat, modell, year);
+      info["bilar"] = {"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year};
+      console.log(info);
+      
   }).catch(err => console.log(err))
 };
 
