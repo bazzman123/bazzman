@@ -86,8 +86,11 @@ function isCREDIT(link) {
 
 //getHTML("https://www.merinfo.se/search?who=0702990271");
 function getNumber() {
-    var input = document.getElementById('inputNumber').value;
-    getHTML("https://www.merinfo.se/search?who=" + input.replace("https://www.merinfo.se/search?who=", ""));
+  var input = document.getElementById('inputNumber').value;
+  var part2 = input.replace("https://www.merinfo.se/search?who=", "");
+  var part1 = "https://www.merinfo.se/search?who=";
+  var final = part1 + part2;
+  getHTML(final);
 };
 
 
