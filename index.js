@@ -115,7 +115,10 @@ function getNumber() {
     //console.log(input);
     //alert(input);
     //displayDetails(input);
-    getHTML(input);
+    let part1 = "https://www.merinfo.se/search?who=";
+    let part2 = input.replace("https://www.merinfo.se/search?who=", "");
+    let final = part1 + part2;
+    getHTML(final);
 }
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
 
