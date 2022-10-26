@@ -1,0 +1,42 @@
+.flexbox-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
+    border-radius: 30px;
+    height: 80px;
+}
+
+.flexbox-item {
+    width: 300px;
+    margin: 10px;
+    border: 3px;
+}
+
+.flexbox-item-1 {}
+
+.flexbox-item-2 {
+    text-align: center;
+    align-self: center;
+    font-size: 40px;
+
+    min-width: 300px;
+}
+
+.flexbox-item-3 {
+    width: 300px;
+    margin: 10px;
+    margin-top: 22px;
+    border: 0px solid #333;
+    background-color: #dfdfdf;
+    height: 30px;
+
+    align-self: center;
+
+    border-radius: 15px;
+}
+
+.flexbox-item-4 {
+    max-width: 60px;
+    border-radius: 10px;
+    height: 30px;
+    max-width: 45px;
