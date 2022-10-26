@@ -94,12 +94,12 @@ function isCREDIT(link) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditValue = doc.getElementById("data-credit").textContent;
-      console.log(creditValue);
+      //console.log(creditValue);
       var byId = doc.getElementById("box-data").getElementsByClassName("col-12")[0].getElementsByClassName("card card-body card-data")[0].getElementsByClassName("list-data enlarge")[0];
       let fabrikat = byId.getElementsByClassName("value")[0].textContent;
       let modell = byId.getElementsByClassName("value")[1].textContent;
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
-      console.log(fabrikat, modell, year);
+      console.log(creditValue, fabrikat, modell, year);
   }).catch(err => console.log(err))
 };
 
