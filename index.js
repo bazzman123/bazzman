@@ -88,7 +88,7 @@ function isCREDIT(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      let creditValue = doc.getElementById("data-credit");
+      let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
   }).catch(err => console.log(err))
 };
