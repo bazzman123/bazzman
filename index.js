@@ -128,10 +128,12 @@ function displayDetails(info) {
     fullDiv.className = "flexbox-container-2";
     fullDiv.id = "FD";
     for (let i = 0; i < info["car count"]; i++) {
-        var myDiv = $("FD");
-        var paragraph = document.createElement("p");
-        paragraph.textContent = info[i];
-        myDiv.append(paragraph);
+        var resultCarsDiv = document.getElementById("resultCars");
+        var p = document.createElement("p");
+        p.innerHTML = info[i];
+        div[0].append(p);
+        //p.textContent = info[i];
+        //resultCarsDiv.append(p);
     };
 };
 
