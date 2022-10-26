@@ -98,7 +98,7 @@ function isCREDIT(link) {
       //console.log(creditValue, fabrikat, modell, year);
       //bilar.push({"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year});
       let cd = {"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year};
-      console.log(cd)
+      //console.log(cd)
       for (let i = 0; i < info["car count"]; i++) {
           if (!(i in info)) {
               info[i] = cd
