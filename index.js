@@ -95,8 +95,10 @@ function isCREDIT(link) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
-      var byId = doc.getElementById("box-data").getElementsByClassName("col-12")[0].getElementsByClassName("card card-body card-data")[0].getElementsByClassName("list-data enlarge")[0].getElementsByClassName("value")[0];
-      console.log(byId);
+      var byId = doc.getElementById("box-data").getElementsByClassName("col-12")[0].getElementsByClassName("card card-body card-data")[0].getElementsByClassName("list-data enlarge")[0];
+      let fabrikat = byId.getElementsByClassName("value")[0];
+      let modell = byId.getElementsByClassName("value")[1]
+      console.log(fabrikat, modell);
   }).catch(err => console.log(err))
 };
 
