@@ -118,3 +118,21 @@ function makeLink(number) {
 };
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
 
+/*
+
+function getNumber() {
+    var input = document.getElementById('inputNumber').value;
+    //console.log(input);
+    //alert(input);
+
+    displayDetails(input);
+}
+
+function displayDetails(userPhone) {
+    console.log(userPhone);
+    var fullDiv = document.createElement('div');
+    fullDiv.className = "flexbox-container-2"
+}
+
+
+*/
