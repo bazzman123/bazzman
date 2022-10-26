@@ -95,7 +95,7 @@ function isCREDIT(link) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
-      var byId = doc.getElementById("box-data").nextSibling;
+      var byId = doc.getElementById("box-data").nextSibling.nextSibling;
       console.log(byId);
   }).catch(err => console.log(err))
 };
