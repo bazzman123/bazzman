@@ -97,7 +97,7 @@ function isCREDIT(link) {
       let modell = byId.getElementsByClassName("value")[1].textContent;
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
       //console.log(creditValue, fabrikat, modell, year);
-      info["bilar"].push({"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year};
+      info["bilar"].push({"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year});
       //console.log(info);
       
   }).catch(err => console.log(err))
