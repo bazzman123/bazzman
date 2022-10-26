@@ -51,11 +51,11 @@ function getAPI(code) {
   response = fetch(finalLink, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}}).then(response => response.json()).then((data) => {
       //console.log(JSON.parse(data));
       //console.log(typeof(data));
-      console.log("getAPI first data:", data);
+      //console.log("getAPI first data:", data);
       //console.log(data["data"]["url"]);
       info["car count"] = data["data"]["count"];
       info["car link"] = data["data"]["url"];
-      console.log(info);
+      //console.log(info);
       if (data["data"]["url"] != "") {
           getCARS(data["data"]["url"]);
       };
@@ -68,9 +68,9 @@ function getCARS(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      console.log(doc);
+      //console.log(doc);
       let carLinks = doc.getElementsByClassName("clickable-tr");
-      console.log(carLinks);
+      //console.log(carLinks);
       for (let i = 0; i < 3; i++) {
           //console.log(carLinks[i].innerHTML);
           let badLink = carLinks[i].firstElementChild.firstElementChild.href;
@@ -79,6 +79,7 @@ function getCARS(link) {
           console.log(goodLink);
           isCREDIT(goodLink);
       };
+      console.log(info);
   }).catch(err => console.log(err))
 };
 
@@ -94,9 +95,9 @@ function isCREDIT(link) {
       let fabrikat = byId.getElementsByClassName("value")[0].textContent;
       let modell = byId.getElementsByClassName("value")[1].textContent;
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
-      console.log(creditValue, fabrikat, modell, year);
+      //console.log(creditValue, fabrikat, modell, year);
       info["bilar"] = {"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year};
-      console.log(info);
+      //console.log(info);
       
   }).catch(err => console.log(err))
 };
