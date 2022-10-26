@@ -77,7 +77,19 @@ function getCARS(link) {
           let goodPart = badLink.substr(badLink.length-21);
           let goodLink = "https://biluppgifter.se/brukare/person/" + goodPart;
           console.log(goodLink);
+          isCREDIT(goodLink);
       };
+  }).catch(err => console.log(err))
+};
+
+function isCREDIT(link) {
+  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  let finalLink = PROXY + link;
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      let creditValue = doc.getElementById("data-credit");
+      console.log(creditValue);
   }).catch(err => console.log(err))
 };
 
