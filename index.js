@@ -131,7 +131,7 @@ function displayDetails(info) {
         var resultCarsDiv = document.getElementById("resultCars");
         var p = document.createElement("p");
         p.innerHTML = info[i];
-        div[0].append(p);
+        resultCarsDiv[0].append(p);
         //p.textContent = info[i];
         //resultCarsDiv.append(p);
     };
