@@ -14,6 +14,9 @@ dict.push({
 function getElementByXpath(path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
+function resolver(prefix){
+   return prefix === "xhtml" ? 'http://www.w3.org/1999/xhtml' : null;
+}
 
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
@@ -93,7 +96,7 @@ function isCREDIT(link) {
       let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
       var xpath = "//a[text()='Fabrikat']";
-      var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+      var matchingElement = document.evaluate(xpath, document, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
       console.log(matchingElement);
   }).catch(err => console.log(err))
 };
