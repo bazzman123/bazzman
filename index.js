@@ -20,11 +20,11 @@ function getHTML(link) {
   response = fetch(finalLink).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
-      console.log(doc);
+      //console.log(doc);
       let href = doc.getElementsByClassName("link-primary")[0].href;
-      console.log("person href:", href);
+      //console.log("person href:", href);
       info["searchedLink"] = href;
-      console.log("stored:", info);
+      //console.log("stored:", info);
       getCODE(href);
   }).catch(err => console.log(err))
 };
@@ -76,7 +76,7 @@ function getCARS(link) {
           let badLink = carLinks[i].firstElementChild.firstElementChild.href;
           let goodPart = badLink.substr(badLink.length-21);
           let goodLink = "https://biluppgifter.se/brukare/person/" + goodPart;
-          console.log(goodLink);
+          //console.log(goodLink);
           isCREDIT(goodLink);
       };
       console.log(info);
@@ -105,14 +105,10 @@ function isCREDIT(link) {
               break;
           };
       };
-      
-      console.log(info);
-      
+      //console.log(info);
   }).catch(err => console.log(err))
 };
 
 getHTML("https://www.merinfo.se/search?who=0702990271");
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
-console.log(info);
-console.log(info);
-console.log(info);
+
