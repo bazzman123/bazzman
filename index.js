@@ -109,6 +109,13 @@ function isCREDIT(link) {
   }).catch(err => console.log(err))
 };
 
-getHTML("https://www.merinfo.se/search?who=0702990271");
+//getHTML("https://www.merinfo.se/search?who=0702990271");
+function makeLink(number) {
+    let number = getElementById("query");
+    let part1 = "https://www.merinfo.se/search?who=";
+    let part2 = String(number);
+    let final = part1 + part2;
+    getHTML(final)
+};
 //getHTML("https://www.merinfo.se/search?who=axel+john+eklund&where=");
 
