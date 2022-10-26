@@ -74,8 +74,8 @@ function getCARS(link) {
       for (let i = 0; i < 3; i++) {
           //console.log(carLinks[i].innerHTML);
           let badLink = carLinks[i].firstElementChild.firstElementChild.href;
-          //console.log(badLink.substr(badLink.length-21));
-          let goodLink = "https://biluppgifter.se/brukare/person/" + badLink;
+          let goodPart = badLink.substr(badLink.length-21);
+          let goodLink = "https://biluppgifter.se/brukare/person/" + goodPart;
           console.log(goodLink);
       };
   }).catch(err => console.log(err))
