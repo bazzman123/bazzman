@@ -106,7 +106,7 @@ function isCREDIT(link) {
           };
       };
       //console.log(info);
-      displayDetails(info)
+      displayDetails(info);
   }).catch(err => console.log(err))
 };
 
@@ -125,9 +125,7 @@ function getNumber() {
 
 
 function displayDetails(info) {
-    console.log(info)
-    for (let i = 0; i < info["car count"]; i++) {
-    };
+    console.log(info);
 };
 
 
