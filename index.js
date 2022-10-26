@@ -80,6 +80,7 @@ function getCARS(link) {
           isCREDIT(goodLink);
       };
       //console.log(info);
+      displayDetails(info);
   }).catch(err => console.log(err))
 };
 
@@ -95,18 +96,15 @@ function isCREDIT(link) {
       let fabrikat = byId.getElementsByClassName("value")[0].textContent;
       let modell = byId.getElementsByClassName("value")[1].textContent;
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
-      //console.log(creditValue, fabrikat, modell, year);
-      //bilar.push({"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year});
       let cd = {"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year};
       //console.log(cd)
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < info["car count"]; i++) {
           if (!(i in info)) {
               info[i] = cd
               break;
           };
       };
-      //console.log(info);
-      displayDetails(info);
+      //DONT WRITE FROM HERE !!
   }).catch(err => console.log(err))
 };
 
