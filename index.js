@@ -11,7 +11,9 @@ dict.push({
     value: "the value"
 });
 */
-
+function getElementByXpath(path) {
+  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
 
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
@@ -90,6 +92,8 @@ function isCREDIT(link) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
+      let fabrikat = getElementByXpath("/html/body/div[3]/main/section/div[5]/div/div/ul/li[1]/span[2]");
+      console.log(fabrikat);
   }).catch(err => console.log(err))
 };
 
