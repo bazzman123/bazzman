@@ -95,9 +95,8 @@ function isCREDIT(link) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditValue = doc.getElementById("data-credit").textContent;
       console.log(creditValue);
-      var xpath = "//a[contains(text(),'Fabrikat')]";
-      var matchingElement = document.evaluate(xpath, document, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-      console.log(matchingElement);
+      var byId = getElementById("box-data").firstChild.firstChild;
+      console.log(byId);
   }).catch(err => console.log(err))
 };
 
