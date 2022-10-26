@@ -11,8 +11,7 @@ dict.push({
     value: "the value"
 });
 */
-// XPath:
-// '/html/body/div/main/div/div[3]/div[2]/div[3]/div[1]/div/div/div[1]/h2/a'
+
 
 function getHTML(link) {
   let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
