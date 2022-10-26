@@ -99,6 +99,13 @@ function isCREDIT(link) {
       let year = String(doc.getElementById("data-vehicle-year").textContent) + "/" + String(doc.getElementById("data-model-year").textContent)
       //console.log(creditValue, fabrikat, modell, year);
       bilar.push({"kredit": creditValue, "fabrikat": fabrikat, "modell": modell, "year": year});
+      """
+      if (key in object) {
+          object[key]++;
+      } else {
+          object[key] = 1;
+      }
+      """
       //console.log(info);
       
   }).catch(err => console.log(err))
