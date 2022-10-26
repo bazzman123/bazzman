@@ -111,7 +111,7 @@ function isCREDIT(link) {
 
 //getHTML("https://www.merinfo.se/search?who=0702990271");
 function makeLink(number) {
-    let number1 = document.getElementById("query").value;
+    let number = String(number)
     let part1 = "https://www.merinfo.se/search?who=";
     let part2 = String(number1);
     let final = part1 + part2;
